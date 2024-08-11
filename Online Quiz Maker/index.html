@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Quiz Maker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div id="home">
+            <h1>Welcome to Online Quiz Maker</h1>
+            <button onclick="showQuizCreation()">Create Quiz</button>
+            <button onclick="showQuizListing()">Take Quiz</button>
+        </div>
+
+        <div id="quiz-creation" class="hidden">
+            <h2>Create a New Quiz</h2>
+            <form id="create-quiz-form">
+                <label for="quiz-title">Quiz Title:</label>
+                <input type="text" id="quiz-title" required>
+                <div id="questions">
+                    <div class="question">
+                        <label>Question:</label>
+                        <input type="text" class="question-text" required>
+                        <label>Options:</label>
+                        <input type="text" class="option" required>
+                        <input type="text" class="option" required>
+                        <input type="text" class="option" required>
+                        <input type="text" class="option" required>
+                        <label>Correct Answer:</label>
+                        <input type="text" class="correct-answer" required>
+                    </div>
+                </div>
+                <button type="button" onclick="addQuestion()">Add Another Question</button>
+                <button type="submit">Create Quiz</button>
+            </form>
+            <button onclick="showHome()">Back to Home</button>
+        </div>
+
+        <div id="quiz-listing" class="hidden">
+            <h2>Available Quizzes</h2>
+            <ul id="quiz-list"></ul>
+            <button onclick="showHome()">Back to Home</button>
+        </div>
+
+        <div id="quiz-taking" class="hidden">
+            <h2 id="quiz-title-display"></h2>
+            <form id="take-quiz-form">
+                <div id="quiz-questions"></div>
+                <button type="submit">Submit Quiz</button>
+            </form>
+            <button onclick="showQuizListing()">Back to Quiz Listing</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
